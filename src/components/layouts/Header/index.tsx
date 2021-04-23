@@ -1,9 +1,9 @@
 import React from 'react';
-import './style.css';
+import css from './style.module.css';
 
 function Header() {
   return (
-    <div className="">
+    <div className={css.container}>
     </div>
   );
 }
