@@ -1,12 +1,12 @@
 import axios from 'axios';
 import querystring from 'querystring';
-import { ISong } from '../../interfaces';
+import { ISong } from '../interfaces';
 
 const hostName = "https://api-stg.jam-community.com";
 
 class api {
   public static async getSongs(): Promise<ISong[]> {
-    let songList: ISong[];
+    let songList: ISong[] = [];
 
     try {
       const { data } = await axios.get(hostName + '/song/trending');
