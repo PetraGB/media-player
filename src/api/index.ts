@@ -1,15 +1,16 @@
 import axios from 'axios';
-import querystring from 'querystring';
 import { ISong } from '../interfaces';
 
-const hostName = "https://api-stg.jam-community.com";
+const instance = axios.create({
+  baseURL: 'https://api-stg.jam-community.com'
+});
 
 class api {
   public static async getSongs(): Promise<ISong[]> {
     let songList: ISong[] = [];
 
     try {
-      const { data } = await axios.get(hostName + '/song/trending');
+      const { data } = await instance.get('/song/trending');
       songList = data;
     } catch (e) {
       console.log(e);
@@ -19,15 +20,14 @@ class api {
   }
 
   public static async likeSong(id: string) {
-    const path = hostName + '/interact/like';
-    const query = querystring.stringify({ apikey: process.env.API_KEY });
-    const params = { id };
-    const headers = {
-      'Content-Type': 'application/x-www-form-urlencoded'
-    }
+    const path = '/interact/like';
+    const data = { id };
+    const params = { apikey: process.env.REACT_APP_API_KEY, id };
+    const headers = { 'Content-Type': 'application/x-www-form-urlencoded' };
 
     try {
-      await axios.post(path, query, { params, headers });
+      const response = await instance.post(path, data, { headers, params });
+      console.log("ANSWER", response)
       return 'success';
     } catch (e) {
       console.log(e);

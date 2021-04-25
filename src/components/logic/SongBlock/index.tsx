@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ISong } from '../../../interfaces';
+import api from '../../../api';
 import ListItem from '../../elements/ListItem';
 import Audio from '../../elements/Audio';
 import Like from '../Like';
@@ -8,7 +9,7 @@ function SongBlock(props: { song: ISong }) {
   const { song } = props;
 
   const likeSong = () => {
-    console.log("liked ", song.id)
+    api.likeSong(song.id);
   };
 
   return (
