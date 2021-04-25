@@ -17,8 +17,9 @@ function SongList() {
 
   return (
     <div>
-      {songList && songList.map(song => (
-        <SongBlock song={song} />
+      <h1>The songs</h1>
+      {songList && songList.map((song, index) => (
+        <SongBlock song={song} key={index} />
       ))}
     </div>
   );

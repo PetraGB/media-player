@@ -1,1 +1,8 @@
+body {
+  font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+  color: #99E9FF;
+}
 
+h1, h2, h3, h4, h5 {
+  font-family: 'Futura', monospace;
+}
