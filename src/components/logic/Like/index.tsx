@@ -22,9 +22,7 @@ function Like(props: IProps) {
   };
 
   return (
-    <div onClick={like}>
-      <Heart isActive={isActive} count={count} />
-    </div>
+    <Heart isActive={isActive} count={count} onClick={like} />
   );
 }
 

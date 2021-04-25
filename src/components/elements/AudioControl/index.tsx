@@ -11,6 +11,7 @@ function AudioControl(props: IProps) {
 
   return (
     <audio
+      className={css.container}
       controls
       src={source}
       ref={element => setRef(element)}

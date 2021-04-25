@@ -1,5 +1,30 @@
 .container {
-  height: 20px;
-  width: 20px;
-  background-color: sandybrown;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 55px;
+}
+
+.container .trigger {
+  height: 25px;
+  width: 25px;
+  fill: #DF93E6;
+  transition: fill 0.5s ease;;
+}
+
+.container.active .trigger {
+  fill: #DE1FF0;
+}
+
+.container p {
+  text-align: center;
+  font-size: 10px;
+}
+
+.container span {
+  display: block;
+  font-size: 14px;
+  font-family: 'Futura', monospace;
+  font-style: bold;
 }

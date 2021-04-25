@@ -22,7 +22,7 @@ class api {
   public static async likeSong(id: string) {
     const path = '/interact/like';
     const data = { id };
-    const params = { apikey: process.env.REACT_APP_API_KEY, id };
+    const params = { apikey: process.env.REACT_APP_API_KEY };
     const headers = { 'Content-Type': 'application/x-www-form-urlencoded' };
 
     try {
