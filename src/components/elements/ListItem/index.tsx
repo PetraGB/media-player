@@ -3,17 +3,23 @@ import css from './style.module.css';
 
 interface IProps {
   title: string;
-  image: string;
+  imageUrl: string;
+  imageAlt: string;
   children: React.ReactNode;
 }
 
 function ListItem(props: IProps) {
-  const { title, children } = props;
+  const { title, imageUrl, children } = props;
 
   return (
     <div className={css.container}>
       <h5>{title}</h5>
-      {children}
+
+      <img src={imageUrl} />
+
+      <div className={css.children}>
+        {children}
+      </div>
     </div>
   );
 }

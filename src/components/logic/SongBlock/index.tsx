@@ -12,8 +12,9 @@ function SongBlock(props: { song: ISong }) {
   };
 
   return (
-    <ListItem title={song.name} image={song.cover_image_path}>
+    <ListItem title={song.name} imageUrl={song.cover_image_path} imageAlt={song.name_seo}>
       <Audio source={song.music_file_path}/>
+
       <Like count={song.likes} onClick={likeSong} />
     </ListItem>
   );
